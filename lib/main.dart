@@ -125,7 +125,7 @@ class Hasil extends StatelessWidget {
         Column(
           children: [
             Text(
-              "Suhu Dalam reaumur",
+              "Suhu Dalam Reaumur",
               style: TextStyle(fontSize: 20),
             ),
             Text(
