@@ -14,13 +14,13 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   TextEditingController text1 = TextEditingController();
-  double kelvin = 0, reamor = 0, input = 0;
+  double kelvin = 0, reaumur = 0, input = 0;
 
   konversi() {
     setState(() {
       input = double.parse(text1.text);
       kelvin = input + 273;
-      reamor = input * 4 / 5;
+      reaumur = input * 4 / 5;
     });
   }
 
@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               inputSuhu(text1: text1),
-              Hasil(kelvin: kelvin, reamor: reamor),
+              Hasil(kelvin: kelvin, reaumur: reaumur),
               konvertButton(text1: text1, konversi: konversi)
             ],
           ),
@@ -99,11 +99,11 @@ class Hasil extends StatelessWidget {
   const Hasil({
     Key? key,
     required this.kelvin,
-    required this.reamor,
+    required this.reaumur,
   }) : super(key: key);
 
   final double kelvin;
-  final double reamor;
+  final double reaumur;
 
   @override
   Widget build(BuildContext context) {
@@ -125,11 +125,11 @@ class Hasil extends StatelessWidget {
         Column(
           children: [
             Text(
-              "Suhu Dalam Reamor",
+              "Suhu Dalam reaumur",
               style: TextStyle(fontSize: 20),
             ),
             Text(
-              "$reamor",
+              "$reaumur",
               style: TextStyle(fontSize: 20),
             ),
           ],
